@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RootRebel | Secure Crypto Gateway</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0b0f19; color: #ffffff; font-family: sans-serif; }
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 1.5rem;
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4">
+
+    <nav class="w-full max-w-2xl flex justify-between items-center py-6">
+        <div class="text-xl font-black tracking-widest uppercase">Root<span class="text-blue-500">Rebel</span></div>
+        <div class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+    </nav>
+
+    <header class="text-center my-10 w-full max-w-2xl">
+        <h1 class="text-4xl font-bold mb-4">Secure Payment <span class="accent-gradient">Gateway</span></h1>
+        <p class="text-gray-400 text-sm">Send payments to the verified RootRebel addresses below.</p>
+    </header>
+
+    <div class="w-full max-w-2xl space-y-4">
+        
+        <div class="glass-card p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center gap-2 text-orange-500 font-bold">
+                    <i class="fab fa-bitcoin text-xl"></i> BITCOIN
+                </span>
+                <span class="text-xs text-gray-500">NETWORK: BTC</span>
+            </div>
+            <p class="text-xs font-mono bg-black/40 p-3 rounded-lg break-all border border-white/5 mb-3">1GWCRTGMHRMHTNJKH4UKKBZIEGSS6DLM7I</p>
+            <button onclick="copyAddr('1GWCRTGMHRMHTNJKH4UKKBZIEGSS6DLM7I', this)" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-xl font-bold transition text-sm">
+                Copy Address
+            </button>
+        </div>
+
+        <div class="glass-card p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center gap-2 text-yellow-500 font-bold">
+                    <i class="fas fa-coins text-xl"></i> USDT
+                </span>
+                <span class="text-xs text-gray-500">NETWORK: BEP20 (BSC)</span>
+            </div>
+            <p class="text-xs font-mono bg-black/40 p-3 rounded-lg break-all border border-white/5 mb-3">0x83d3aa83edd5e699d23b2deb736141912b373f5e</p>
+            <button onclick="copyAddr('0x83d3aa83edd5e699d23b2deb736141912b373f5e', this)" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-xl font-bold transition text-sm">
+                Copy Address
+            </button>
+        </div>
+
+        <div class="glass-card p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center gap-2 text-green-500 font-bold">
+                    <i class="fas fa-bolt text-xl"></i> USDT
+                </span>
+                <span class="text-xs text-gray-500">NETWORK: TRC20 (TRON)</span>
+            </div>
+            <p class="text-xs font-mono bg-black/40 p-3 rounded-lg break-all border border-white/5 mb-3">TJFK9PFMz1xn5xtnJ5jociiqdEGrJCWbmk</p>
+            <button onclick="copyAddr('TJFK9PFMz1xn5xtnJ5jociiqdEGrJCWbmk', this)" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-xl font-bold transition text-sm">
+                Copy Address
+            </button>
+        </div>
+
+    </div>
+
+    <footer class="mt-auto py-8 text-gray-600 text-[10px] uppercase tracking-widest">
+        RootRebel Protocol &copy; 2026
+    </footer>
+
+    <script>
+        function copyAddr(text, btn) {
+            navigator.clipboard.writeText(text);
+            const originalText = btn.innerText;
+            btn.innerText = "COPIED!";
+            btn.classList.replace('bg-blue-600', 'bg-green-600');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.replace('bg-green-600', 'bg-blue-600');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
